@@ -85,7 +85,7 @@ def main(flag, input_root, output_root, end_epoch, download):
 
     print('==> Building and training model...')
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
     model = ResNet18(in_channels=n_channels, num_classes=n_classes).to(device)
 
     if task == "multi-label, binary-class":
@@ -102,6 +102,7 @@ def main(flag, input_root, output_root, end_epoch, download):
     auc_list = np.array(val_auc_list)
     index = auc_list.argmax()
     print('epoch %s is the best model' % (index))
+    # index = 56
 
     print('==> Testing model...')
     restore_model_path = os.path.join(
@@ -248,7 +249,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='RUN Baseline model of MedMNIST')
     parser.add_argument('--data_name',
-                        default='pathmnist',
+                        default='octmnist',
                         help='subset of MedMNIST',
                         type=str)
     parser.add_argument('--input_root',

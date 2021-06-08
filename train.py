@@ -329,7 +329,7 @@ if __name__ == '__main__':
                         help='input root, the source of dataset files',
                         type=str)
     parser.add_argument('--output_root',
-                        default='/media/user/A3CDDB6409D0FE9C/Med/output_50',
+                        default='.',
                         help='output root, where to save models and results',
                         type=str)
     

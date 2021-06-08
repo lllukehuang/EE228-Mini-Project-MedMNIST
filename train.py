@@ -106,7 +106,7 @@ def main(flag, input_root, output_root, end_epoch, download):
 
     print('==> Building and training model...')
 
-    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(device)
     model = ResNet50(in_channels=n_channels, num_classes=n_classes).to(device)
 

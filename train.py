@@ -58,7 +58,7 @@ def main(flag, input_root, output_root, end_epoch, download):
         train_transform = transforms.Compose(
             [transforms.ToTensor(),
             transforms.RandomHorizontalFlip(p=0.5),
-            transforms.RandomCrop(28),
+            # transforms.RandomCrop(28),
             transforms.ColorJitter(brightness=1, contrast=1, hue=0.5, saturation=0.5),
             transforms.RandomRotation(15),
             # rotation 加上后CPU拉满带不动
@@ -67,7 +67,7 @@ def main(flag, input_root, output_root, end_epoch, download):
         train_transform = transforms.Compose(
             [transforms.ToTensor(),
              transforms.RandomHorizontalFlip(p=0.5),
-             transforms.RandomCrop(28),
+             # transforms.RandomCrop(28),
              # transforms.ColorJitter(brightness=1, contrast=1, hue=0.5, saturation=0.5),
              transforms.RandomRotation(15),
              # rotation 加上后CPU拉满带不动

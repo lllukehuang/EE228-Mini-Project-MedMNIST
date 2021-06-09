@@ -102,6 +102,20 @@ class ResNet(nn.Module):
 def ResNet18(in_channels, num_classes):
     return ResNet(BasicBlock, [2, 2, 2, 2], in_channels=in_channels, num_classes=num_classes)
 
+def ResNet34(in_channels, num_classes):
+    return ResNet(BasicBlock, [3, 4, 6, 3], in_channels=in_channels, num_classes=num_classes)
 
 def ResNet50(in_channels, num_classes):
     return ResNet(Bottleneck, [3, 4, 6, 3], in_channels=in_channels, num_classes=num_classes)
+
+def ResNet101(in_channels, num_classes):
+    return ResNet(Bottleneck, [3, 4, 23, 3], in_channels=in_channels, num_classes=num_classes)
+
+def ResNet152(in_channels, num_classes):
+    return ResNet(Bottleneck, [3, 8, 36, 3], in_channels=in_channels, num_classes=num_classes)
+
+if __name__ == '__main__':
+    channels = 3
+    num_classes = 10
+    model = ResNet18(channels,num_classes)
+    print(model)

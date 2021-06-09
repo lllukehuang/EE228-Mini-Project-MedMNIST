@@ -21,3 +21,11 @@ conda install numpy==1.18.5, pandas==0.25.3, scikit-learn==0.22.2, tqdm
 
 - Ubuntu16.04
 - NVIDIA GTX1080TI
+
+
+
+### Video memory overhead:
+
+Resnet-18: 1777MB
+
+Resnet-50: 4977MB
